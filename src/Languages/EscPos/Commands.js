@@ -38,10 +38,19 @@ class Commands {
     );
     bold = (on = true) => this.write(Functions.escE(on ? Constants.BOLD_ON : Constants.BOLD_OFF));
     newline = () => this.write(Constants.LF);
-    feed = (lines) => this.write(Constants.LF.repeat(lines));
-    // feed = (lines) => this.write(lines > 0 ? Functions.escd(lines) : Constants.LF);
+    feed = (lines) => {
+        if (lines > 0) {
+            this.write(Functions.escd(lines));
+        } else if (lines < 0) {
+            for (let i = 0; i <= Math.abs(lines); i++) {
+                this.write(Functions.esce());
+            }
+        }
+        // this.write(lines > 0 ? Functions.escd(lines) : Constants.LF);
+    };
     cut = (full = true) => this.write(Functions.gsV(full ? Constants.CUT_FULL : Constants.CUT_PARTIAL, 0));
     pulse = () => this.write(Functions.escp(0, 50, 250));
+    feedToCutter = () => this.write(Functions.fsL());
 
     font = (num) => {
         if (num === Common.FontA) {

@@ -52,6 +52,18 @@ export default {
     escd: (n) => Constants.ESC + 'd' + chr(n),
 
     /**
+     * ESC e
+     * Print and reverse feed n lines
+     */
+    esce: (n = 1) => Constants.ESC + 'e' + chr(n),
+
+    /**
+     * ESC 2
+     * Select default line spacing
+     */
+    esc2: () => Constants.ESC + '2',
+
+    /**
      * ESC M
      * Select character font
      */
@@ -96,4 +108,10 @@ export default {
     qrFn80: (pL, pH, d) => Constants.GS + '(' + 'k' + pL + pH + chr(49) + chr(80) + chr(48) + d,
 
     qrFn81: () => Constants.GS + '(' + 'k' + chr(3) + Constants.NUL + chr(49) + chr(81) + chr(48),
+
+    /**
+     * FS ( L
+     * Feeds paper to the cutting position
+     */
+    fsL: () => Constants.FS + '(' + 'L' + chr(2) + chr(0) + chr(66) + chr(49),
 }
