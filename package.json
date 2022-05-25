@@ -1,11 +1,10 @@
 {
   "name": "js-print",
-  "version": "0.7.4",
+  "version": "0.8.1",
   "author": "Bliq",
-  "description": "Print manager",
+  "description": "JS Print manager",
   "license": "MIT",
   "main": "index.js",
-  "module": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
