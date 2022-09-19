@@ -1,5 +1,5 @@
 {
-  "name": "js-print",
+  "name": "@bliq/js-print",
   "version": "0.8.1",
   "author": "Bliq",
   "description": "JS Print manager",
@@ -10,9 +10,5 @@
   },
   "dependencies": {
     "qz-tray": "^2.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bliq-mx/js-print.git"
   }
 }
